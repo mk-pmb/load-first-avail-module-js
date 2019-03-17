@@ -18,8 +18,8 @@ Usage
 -----
 
 ```javascript
-import makeLoader from 'load-first-avail-module';
-const importFirstAvailable = makeLoader(id => import(id));
+import makeFirstAvailModLoader from 'load-first-avail-module';
+const importFirstAvailable = makeFirstAvailModLoader(id => import(id));
 
 async function totallyBogus() {
   const someZip = await importFirstAvailable([

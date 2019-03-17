@@ -1,5 +1,5 @@
 { "name": "load-first-avail-module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Based on a module load function (typically your module's `require`, or a proxy for your `import`), create a function that promises to load the first available module from an array of candidate module names, probed in series.",
   "keywords": [],
 
