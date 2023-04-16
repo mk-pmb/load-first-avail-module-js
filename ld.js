@@ -1,8 +1,9 @@
 ﻿/*jslint indent: 2, maxlen: 80, node: true */
 /* -*- tab-width: 2 -*- */
+//eslint-disable-next-line no-redeclare
 /*global Promise: true */
 'use strict';
-module.exports = (function () {
+module.exports = (function setup() {
   function isModuleLoadError(err) {
     return (err.code === 'MODULE_NOT_FOUND');
   }
@@ -11,9 +12,10 @@ module.exports = (function () {
     var nx = (vari || specs)[0];
     if (!vari) {
       if (!specs.length) { return false; }
-      return tryLoad(load, [nx,
+      return tryLoad(load, [
+        nx,
         nx + '.mjs',
-        ], specs.slice(1));
+      ], specs.slice(1));
     }
     return Promise.resolve(nx).then(load).then(null, function chkErr(err) {
       if (!isModuleLoadError(err)) { throw err; }
